@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title color="warning">Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngIf="entradaActual">
+    <ion-card-content >
+      <p id ="fechaTexto">Clase {{entradaActual.fechaTexto}}</p>
+
+    
+    </ion-card-content>
+    <!-- <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  -->
+    <ion-button expand="block">Generar codigo QR</ion-button>
+  </ion-card>
+</ion-content>
