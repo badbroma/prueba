@@ -1,12 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 
+import { Plugins } from "@capacitor/core"
+const { CameraPreview } = Plugins;
+import { CameraPreviewOptions, CameraPreviewPictureOptions } from '@capacitor-community/camera-preview';
+
+import '@capacitor-community/camera-preview'
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
+  image = null;
+  cameraActive = false;
 
   fecha: string;
 
@@ -28,6 +36,16 @@ export class InicioPage implements OnInit {
     this.fecha = moment().format();
     this.cargarEntradas();
    }
+
+   openCamera(){
+    const CameraPreviewOptions: CameraPreviewOptions = {
+      position: 'rear',
+      parent: 'cameraPreview',
+      className: 'cameraPreview'
+    };
+    CameraPreview.start(CameraPreviewOptions);
+    this.cameraActive = true;
+  }
 
     cargarEntradas(){
       var fecha = moment(this.fecha).format('DD-MM-YY');
