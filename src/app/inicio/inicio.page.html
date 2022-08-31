@@ -8,11 +8,32 @@
 <ion-content>
   <ion-card *ngIf="entradaActual">
     <ion-card-content >
-      <p id ="fechaTexto">Clase {{entradaActual.fechaTexto}}</p>
+      <p id ="fechaTexto">Clases {{entradaActual.fechaTexto}}</p>
 
     
     </ion-card-content>
     <!-- <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  -->
-    <ion-button expand="block">Generar codigo QR</ion-button>
+    
+    <br> <br> <br> <br> 
+    <ion-toolbar color="primary">
+    <ion-buttons slot="">
+      <ion-button [routerLink]="['/clase']">
+        Listado de clases 
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  </ion-card>
+  <ion-card>
+    <ion-card-content >
+      
+      <div id="cameraPreview" class="cameraPreview">
+    
+      </div>
+    
+      <ion-img [src]="image" *ngIf="image && !cameraActive"></ion-img>
+      <ion-button (click)="openCamera()" expand="full" *ngIf="!cameraActive">Mostrar cámara</ion-button>
+    
+    
+    </ion-card-content>
   </ion-card>
 </ion-content>
