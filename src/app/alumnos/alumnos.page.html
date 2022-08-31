@@ -17,7 +17,8 @@
     <ion-card-content>
       <ion-list>
         <ion-item *ngFor="let a of alumnos">
-        <ion-label>{{a.id}}) {{a.nombre}}   </ion-label>
+        <ion-label> {{a.id}}) {{a.nombre}}  </ion-label>
+        <ion-checkbox slot="end"[ngModel]="estadoAsistencia"></ion-checkbox>
         </ion-item>    
       </ion-list>
     </ion-card-content>
