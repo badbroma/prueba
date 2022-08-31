@@ -22,18 +22,20 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+  <div id="cameraPreview" class="cameraPreview">
+    
+  </div>
+
+  <ion-img [src]="image" *ngIf="image && !cameraActive"></ion-img>
+  <ion-button (click)="openCamera()" expand="full" *ngIf="!cameraActive">Mostrar cámara</ion-button>
+
+
   </ion-card>
+
   <ion-card>
     <ion-card-content >
       
-      <div id="cameraPreview" class="cameraPreview">
-    
-      </div>
-    
-      <ion-img [src]="image" *ngIf="image && !cameraActive"></ion-img>
-      <ion-button (click)="openCamera()" expand="full" *ngIf="!cameraActive">Mostrar cámara</ion-button>
-    
-    
+
     </ion-card-content>
   </ion-card>
 </ion-content>
